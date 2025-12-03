@@ -11,6 +11,10 @@ We introduce **UniID**, a unified tuning-free framework that synergistically com
 
 ![uniid](asserts/uniid.jpg)
 
+## Release
+- [x] 2025/12/04: We release the code!
+- [ ] Release the model weight
+
 ## Setup
 ### Set up the Environment
 To set up the environment, run the following commands:
