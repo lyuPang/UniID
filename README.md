@@ -2,7 +2,7 @@
 
 Official Implementation of "Training for Identity, Inference for Controllability: A Unified Approach to Tuning-Free Face Personalization" by Lianyu Pang, Ji Zhou, Qiping Wang, Baoquan Zhao, Zhenguo Yang, Li Qing and Xudong Mao.
 
-<a href="https://arxiv.org/abs/2312.15905"><img src="https://img.shields.io/badge/arXiv-2312.15905-b31b1b.svg" height=20.5></a>
+<a href="https://arxiv.org/abs/2512.03964"><img src="https://img.shields.io/badge/arXiv-2512.03964-b31b1b.svg" height=20.5></a>
 
 ![teaser](asserts/teaset.jpg)
 
@@ -10,6 +10,10 @@ Official Implementation of "Training for Identity, Inference for Controllability
 We introduce **UniID**, a unified tuning-free framework that synergistically combines text embedding and adapter approaches while preserving both identity fidelity and text controllability. Our key insight is that when merging the two branches, they should mutually reinforce only identity information, while non-identity aspects such as scene composition are controlled by the original diffusion model's prior knowledge. Specifically, during training, we employ an identity-focused learning scheme that guides both the text embedding and adapter branches to capture exclusively identity-relevant features. At inference, we introduce a normalized rescaling strategy that recovers the text controllability of the original diffusion model in both branches while enabling their complementary identity signals to mutually reinforce each other. Through this strategic training-inference paradigm, UniID achieves superior identity fidelity while preserving the text controllability of the original model.
 
 ![uniid](asserts/uniid.jpg)
+
+## Release
+- [x] 2025/12/04: We release the code!
+- [ ] Release the model weight
 
 ## Setup
 ### Set up the Environment
@@ -82,4 +86,10 @@ We would like to express our sincere gratitude to the creators and maintainers o
 
 ## Reference
 ```
+@article{UniID,
+  title = {Training for Identity, Inference for Controllability: A Unified Approach to Tuning-Free Face Personalization},
+  author = {Lianyu Pang, Ji Zhou, Qiping Wang, Baoquan Zhao, Zhenguo Yang, Qing Li, Xudong Mao},
+  journal = {arXiv preprint arXiv:2512.03964},
+  year = {2025}
+}
 ```
