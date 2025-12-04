@@ -54,6 +54,7 @@ class UniID(nn.Module):
         ) if not drop_text_branch else None
         if self.text_branch is not None and load_text_branch_from_checkpoint is not None:
             state_dict=torch.load(load_text_branch_from_checkpoint, weights_only=True)
+            state_dict={k.replace("text_branch.",""):v for k,v in state_dict.items()}
             self.text_branch.load_state_dict(state_dict)
         self.adapter_branch=AdapterBranch(
             unet=unet,
@@ -66,6 +67,7 @@ class UniID(nn.Module):
         ) if not drop_adapter else None
         if self.adapter_branch is not None and load_adapter_branch_from_checkpoint is not None:
             state_dict=torch.load(load_adapter_branch_from_checkpoint, weights_only=True)
+            state_dict={k.replace("adapter_branch.",""):v for k,v in state_dict.items()}
             self.adapter_branch.load_state_dict(state_dict)
     
     def freeze_text_branch(self):

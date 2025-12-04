@@ -23,7 +23,7 @@ from modules.my_clip import CLIPTextModel as MyCLIPTextModel
 from modules.my_clip import CLIPTextModelWithProjection as MyCLIPTextModelWithProjection
 from modules.attention_processor import IPAttnProcessor2_0
 from modules.uniid import UniID,load_face_recogniztion_model
-from utils import image_grid, get_gpu_info, get_celeb_names_encoder_output
+from utils import image_grid, get_celeb_names_encoder_output
 from modules.my_pipeline import MyStableDiffusionXLPipeline
 
 
@@ -485,7 +485,7 @@ if __name__ == "__main__":
         load_text_branch_from_checkpoint=args.load_text_branch_from_checkpoint+'/pytorch_model.bin',
         num_adapter_tokens=adapter_branch_config['num_adapter_tokens'] if adapter_branch_config is not None else 25,
         normalize_adapter_output=args.normalize_adapter_output,
-        adapter_hidden_dim=adapter_branch_config['adapter_hidden_dim'] if adapter_branch_config is not None else 1024,
+        adapter_hidden_dim=adapter_branch_config['adapter_hidden_dim'] if adapter_branch_config is not None else 768,
         drop_adapter=True if args.load_adapter_from_checkpoint is None else False,
         load_adapter_branch_from_checkpoint=args.load_adapter_from_checkpoint+'/pytorch_model.bin',
         torch_dtype=torch.float16,
