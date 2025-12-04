@@ -252,7 +252,7 @@ class Inference:
         negative_prompt = "monochrome, lowres, bad anatomy, worst quality, low quality"
         for prompt in prompts:
             torch.cuda.empty_cache()
-            prompt = prompt.replace("person", gender)
+            prompt = prompt.replace("<class word>", gender)
 
             (
                 prompt_embeds,
@@ -442,6 +442,12 @@ def parse_args(input_args=None):
         type=str, 
         default=None, 
     )
+    parser.add_argument(
+        "--pretrained_face_recog_model_path",
+        type=str,
+        default=None,
+        help="Path to pretrained resnet model. If not specified weights are initialized from the config file.",
+    )
 
     if input_args is not None:
         args = parser.parse_args(input_args)
@@ -465,19 +471,26 @@ def parse_args(input_args=None):
 if __name__ == "__main__":
     args = parse_args()
 
-    if args.load_text_branch_from_checkpoint is not None:
+    try:
         text_branch_config=json.load(open(f"{args.load_text_branch_from_checkpoint}/config.json",'r'))
-    else:
+    except:
         text_branch_config=None
-    if args.load_adapter_from_checkpoint is not None:
+    try:
         adapter_branch_config=json.load(open(f"{args.load_adapter_from_checkpoint}/config.json",'r'))
-    else:
+    except:
         adapter_branch_config=None
-    torch_dtype = torch.float16
+    
+    if args.pretrained_face_recog_model_path is None:
+        if text_branch_config is not None:
+            args.pretrained_face_recog_model_path = text_branch_config['pretrained_face_recog_model_path']
+        elif adapter_branch_config is not None:
+            args.pretrained_face_recog_model_path = adapter_branch_config['pretrained_face_recog_model_path']
+        else:
+            raise ValueError("pretrained_face_recog_model_path is not specified")
 
     inference = Inference(
         pretrained_model_name_or_path=args.pretrained_model_name_or_path,
-        pretrained_face_recog_model_path=text_branch_config['pretrained_face_recog_model_path'],
+        pretrained_face_recog_model_path=args.pretrained_face_recog_model_path,
         insightface_root=args.insightface_root,
         num_text_branch_tokens=text_branch_config['num_text_branch_tokens'] if text_branch_config is not None else 3,
         celeb_names_file=args.celeb_names_file,
@@ -509,8 +522,6 @@ if __name__ == "__main__":
             )
     else:
         ref_images = [Path(args.ref_image_path)]
-
-    print(args.ref_image_path)
     
     for i, image in enumerate(ref_images):
         if image.is_file() and i < args.num_reference:

@@ -2,7 +2,7 @@ model_name="stabilityai/stable-diffusion-xl-base-1.0"
 
 text_branch_checkpoint_dir="path to the text branch checkpoint"
 adapter_branch_checkpoint_dir="path to the adapter branch checkpoint"
-
+pretrained_face_recog_model_path="path to the face recognition model"
 ref_image_path="path to the reference image"
 save_dir="path to the output directory"
 prompt="input prompt" # or you can use `--prompt_file`
@@ -18,6 +18,7 @@ python inference.py \
       --pretrained_model_name_or_path $model_name \
       --load_text_branch_from_checkpoint $text_branch_checkpoint_dir \
       --load_adapter_from_checkpoint $adapter_branch_checkpoint_dir \
+      --pretrained_face_recog_model_path $pretrained_face_recog_model_path \
       --ref_image_path $ref_image_path \
       --prompt "${prompt}" \
       --seed $seed \
