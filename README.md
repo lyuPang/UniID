@@ -36,7 +36,7 @@ Our model was trained using the training sets of [CelebA-HQ](https://mmlab.ie.cu
 We use [Partial-FC](https://github.com/deepinsight/insightface/blob/master/recognition/partial_fc) as our face recognition model.
 
 ### Model Weights
-For the fine-tuned model presented in our paper, please visit our HuggingFace repository:
+For the trained model presented in our paper, please visit our HuggingFace repository:
 
 **[🔗 HuggingFace Repository: UniID](https://huggingface.co/pangly/UniID)**
 
