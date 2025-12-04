@@ -3,6 +3,7 @@
 Official Implementation of "Training for Identity, Inference for Controllability: A Unified Approach to Tuning-Free Face Personalization" by Lianyu Pang, Ji Zhou, Qiping Wang, Baoquan Zhao, Zhenguo Yang, Li Qing and Xudong Mao.
 
 <a href="https://arxiv.org/abs/2512.03964"><img src="https://img.shields.io/badge/arXiv-2512.03964-b31b1b.svg" height=20.5></a>
+<a href="https://huggingface.co/pangly/UniID" rel="nofollow"><img src="https://camo.githubusercontent.com/7e8c2f62ecbb426a33a94f034fe9075df62b44301eba0057872464c968299009/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f25463025394625413425393725323048756767696e67253230466163652d5370616365732d626c7565" data-canonical-src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue" style="max-width: 100%;"></a>
 
 ![teaser](assets/teaser.jpg)
 
@@ -12,8 +13,7 @@ We introduce **UniID**, a unified tuning-free framework that synergistically com
 ![uniid](assets/uniid.jpg)
 
 ## Release
-- [x] 2025/12/04: We have released the code!
-- [ ] Release the model weights
+- [x] 2025/12/04: We have released the code and model weights!
 
 ## Setup
 ### Setting Up the Environment
@@ -35,6 +35,10 @@ Our model was trained using the training sets of [CelebA-HQ](https://mmlab.ie.cu
 ### Face Recognition Model
 We use [Partial-FC](https://github.com/deepinsight/insightface/blob/master/recognition/partial_fc) as our face recognition model.
 
+### Model Weights
+For the fine-tuned model presented in our paper, please visit our HuggingFace repository:
+
+**[🔗 HuggingFace Repository: UniID](https://huggingface.co/pangly/UniID)**
 
 ## Usage
 
