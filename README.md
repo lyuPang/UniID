@@ -2,7 +2,7 @@
 
 Official Implementation of "Training for Identity, Inference for Controllability: A Unified Approach to Tuning-Free Face Personalization" by Lianyu Pang, Ji Zhou, Qiping Wang, Baoquan Zhao, Zhenguo Yang, Li Qing and Xudong Mao.
 
-<a href="https://arxiv.org/abs/2312.15905"><img src="https://img.shields.io/badge/arXiv-2312.15905-b31b1b.svg" height=20.5></a>
+<a href="https://arxiv.org/abs/2512.03964"><img src="https://img.shields.io/badge/arXiv-2512.03964-b31b1b.svg" height=20.5></a>
 
 ![teaser](asserts/teaset.jpg)
 
@@ -86,4 +86,10 @@ We would like to express our sincere gratitude to the creators and maintainers o
 
 ## Reference
 ```
+@article{UniID,
+  title = {Training for Identity, Inference for Controllability: A Unified Approach to Tuning-Free Face Personalization},
+  author = {Lianyu Pang, Ji Zhou, Qiping Wang, Baoquan Zhao, Zhenguo Yang, Qing Li, Xudong Mao},
+  journal = {arXiv preprint arXiv:2512.03964},
+  year = {2025}
+}
 ```
