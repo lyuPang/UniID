@@ -61,8 +61,8 @@ To run the inference script:
 ```bash
 bash bash_scripts/inference.sh
 ```
++ We recommend using [RealVisXL](https://huggingface.co/SG161222/RealVisXL_V5.0) as the base model in inference instead of SDXL for better results.
 + The generated images will be saved to the directory `{save_dir}/{prompt}`
-
 + For a full list of parameters, please refer to `inference.py` and `inference.sh`.
 
 

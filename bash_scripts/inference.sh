@@ -1,4 +1,4 @@
-model_name="stabilityai/stable-diffusion-xl-base-1.0"
+model_name="SG161222/RealVisXL_V5.0"
 
 text_branch_checkpoint_dir="path to the text branch checkpoint"
 adapter_branch_checkpoint_dir="path to the adapter branch checkpoint"
